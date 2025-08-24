@@ -35,4 +35,4 @@ if __name__=="__main__":
     if os.path.exists(repo_path):
         summarize_repo(repo_path)
     else:
-        print("❌ Path not found! Please enter a valid repo path.")
+        print("Path not found! Please enter a valid repo path.")

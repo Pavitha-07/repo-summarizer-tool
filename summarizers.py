@@ -9,7 +9,7 @@ API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 def call_ai(code: str, language: str) -> str:
     if not API_KEY:
-        return "❌ No API key found. Please set it in .env"
+        return "No API key found. Please set it in .env"
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
@@ -26,7 +26,7 @@ def call_ai(code: str, language: str) -> str:
         response.raise_for_status()
         return response.json()["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        return f"⚠️ API Error: {e}"
+        return f"API Error: {e}"
 
 #Force utf-8 encoding & ignore invalid characters
 LANGUAGE_HANDLERS = {
